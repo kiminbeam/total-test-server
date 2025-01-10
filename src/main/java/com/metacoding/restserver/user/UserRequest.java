@@ -12,4 +12,22 @@ public class UserRequest {
         @NotEmpty
         private String password;
     }
+
+    @Data
+    public static class JoinDTO {
+        @NotEmpty
+        private String username;
+        @NotEmpty
+        private String password;
+        @NotEmpty
+        private String email;
+
+        User toEntity() {
+            return User.builder()
+                    .username(username)
+                    .password(password)
+                    .email(email)
+                    .build();
+        }
+    }
 }

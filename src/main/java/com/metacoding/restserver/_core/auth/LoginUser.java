@@ -11,4 +11,5 @@ public class LoginUser {
     private String username;
     @JsonIgnore
     private String jwt;
+
 }
